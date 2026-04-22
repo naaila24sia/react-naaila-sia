@@ -4,21 +4,29 @@ import PageHeader from "../components/PageHeader";
 export default function Dashboard() {
   return (
     <div id="dashboard-container">
-      <PageHeader />
+      <PageHeader title="Dashboard" breadcrumb={["Dashboard", "Order List"]}>
+        <button className="bg-hijau text-white px-4 py-2 rounded-lg">
+          Add Button
+        </button>
+      </PageHeader>
       <div className="px-5 mb-6">
-        <div className="p-8 rounded-3xl bg-gradient-to-r from-gray-900 to-gray-800 text-white shadow-xl 
-        relative overflow-hidden font-barlow">
+        <div
+          className="p-8 rounded-3xl bg-gradient-to-r from-gray-900 to-gray-800 text-white shadow-xl 
+        relative overflow-hidden font-barlow"
+        >
           {/* Dekorasi Abstract */}
           <div className="absolute top-[-20px] right-[-20px] w-32 h-32 bg-white/10 rounded-full blur-3xl"></div>
-          
+
           <div className="relative z-10">
             <h2 className="text-3xl font-poppins font-extrabold italic">
               Welcome back, Naaila! 🥗
             </h2>
             <p className="text-gray-300 mt-2 max-w-md">
-              You have <span className="text-kuning font-bold">12 new orders</span> waiting to be processed. Let's get started!
+              You have{" "}
+              <span className="text-kuning font-bold">12 new orders</span>{" "}
+              waiting to be processed. Let's get started!
             </p>
-            
+
             <button className="mt-4 px-6 py-2 bg-hijau hover:bg-green-600 text-white rounded-xl text-sm font-bold transition-all shadow-lg">
               View All Orders
             </button>

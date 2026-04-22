@@ -5,8 +5,14 @@ import Dashboard from "./pages/Dashboard";
 import Orders from "./pages/Orders";
 import Customers from "./pages/Customers";
 import NotFound from "./pages/NotFound";
+import Error400 from "./pages/Error400";
+import Error401 from "./pages/Error401";
+import Error403 from "./pages/Error403";
+import AddOrders from "./pages/AddOrders";
+import AddCustomers from "./pages/AddCustomers";
 import { Routes } from "react-router-dom";
 import { Route } from "react-router-dom";
+import AddOrder from "./pages/AddOrders";   
 
 function App() {
   return (
@@ -21,7 +27,12 @@ function App() {
             <Route path="/" element={<Dashboard />} />
             <Route path="/orders" element={<Orders />} />
             <Route path="/customers" element={<Customers />} />
+            <Route path="/400" element={<Error400 />} />
+            <Route path="/401" element={<Error401 />} />
+            <Route path="/403" element={<Error403 />} />
             <Route path="*" element={<NotFound />} />
+            <Route path="/customers/add" element={<AddCustomers />} />
+            <Route path="/orders/add" element={<AddOrders />} />
           </Routes>
         </div>
       </div>
