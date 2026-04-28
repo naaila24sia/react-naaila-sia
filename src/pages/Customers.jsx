@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import customers from "../customers.json";
+import customers from "../data/customers.json";
 import PageHeader from "../components/PageHeader";
 import { FaEdit, FaTrash, FaPlus, FaCrown } from "react-icons/fa";
 
