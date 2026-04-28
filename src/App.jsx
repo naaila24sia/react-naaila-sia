@@ -12,6 +12,10 @@ import { Routes } from "react-router-dom";
 import { Route } from "react-router-dom";
 import AddOrder from "./pages/AddOrders";
 import MainLayout from "./layouts/MainLayout";
+import AuthLayout from "./layouts/AuthLayout";
+import Login from "./pages/auth/Login";
+import Register from "./pages/auth/Register";
+import Forgot from "./pages/auth/Forgot";
 
 function App() {
   return (
@@ -27,6 +31,12 @@ function App() {
         <Route path="/customers/add" element={<AddCustomers />} />
         <Route path="/orders/add" element={<AddOrders />} />
       </Route>
+
+      <Route element={<AuthLayout/>}>
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register/>} />
+            <Route path="/forgot" element={<Forgot/>} />
+        </Route>
     </Routes>
   );
 }
