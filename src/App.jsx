@@ -19,6 +19,9 @@ function App() {
   const Register = React.lazy(() => import("./pages/auth/Register"));
   const MainLayout = React.lazy(() => import("./layouts/MainLayout"));
   const AuthLayout = React.lazy(() => import("./layouts/AuthLayout"));
+  const Products = React.lazy(() => import("./pages/Products"));
+  const ProductDetail = React.lazy(() => import("./pages/ProductDetail"));
+  const CustomerDetail = React.lazy(() => import("./pages/CustomerDetail"));
 
   return (
     <Suspense fallback={<Loading />}>
@@ -27,12 +30,15 @@ function App() {
           <Route path="/" element={<Dashboard />} />
           <Route path="/orders" element={<Orders />} />
           <Route path="/customers" element={<Customers />} />
+          <Route path="/products" element={<Products />} />
           <Route path="/400" element={<Error400 />} />
           <Route path="/401" element={<Error401 />} />
           <Route path="/403" element={<Error403 />} />
           <Route path="*" element={<NotFound />} />
           <Route path="/customers/add" element={<AddCustomers />} />
           <Route path="/orders/add" element={<AddOrders />} />
+          <Route path="/products/:id" element={<ProductDetail />} />
+          <Route path="/customers/:id" element={<CustomerDetail />} />
         </Route>
 
         <Route element={<AuthLayout />}>

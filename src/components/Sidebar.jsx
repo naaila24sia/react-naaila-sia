@@ -47,6 +47,12 @@ export default function Sidebar() {
               <span>Customers</span>
             </NavLink>
           </li>
+          <li>
+          <NavLink to="/products" className={menuClass}>
+              <FaHeadphones className="mr-4 text-xl" />
+              <span>Products</span>
+            </NavLink>
+          </li>
 
           {/* LABEL ERROR PAGE */}
           <li className="pt-4 pb-2 px-4">

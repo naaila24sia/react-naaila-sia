@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import customers from "../data/customers.json";
 import PageHeader from "../components/PageHeader";
 import { FaEdit, FaTrash, FaPlus, FaCrown } from "react-icons/fa";
@@ -6,8 +6,8 @@ import { FaEdit, FaTrash, FaPlus, FaCrown } from "react-icons/fa";
 export default function Customers() {
   return (
     <div className="font-barlow bg-gray-50/50 min-h-screen">
-      <PageHeader 
-        title="Customers" 
+      <PageHeader
+        title="Customers"
         breadcrumb={["Dashboard", "Customers List"]}
       >
         <NavLink
@@ -36,13 +36,17 @@ export default function Customers() {
 
               <tbody className="divide-y divide-gray-50">
                 {customers.map((item, index) => (
-                  <tr key={index} className="hover:bg-gray-50/50 transition-all group">
-                    
-                    {/* KOLOM 1: ID - Style Badge Bulat Kotak dari Orders */}
-                    <td className="p-6">
-                      <span className="bg-[#F1F3F5] text-[#5C7285] px-4 py-2 rounded-xl font-bold text-sm">
-                        #{item.customerId}
-                      </span>
+                  <tr
+                    key={index}
+                    className="hover:bg-gray-50/50 transition-all group"
+                  >
+                    <td className="px-6 py-4">
+                      <Link
+                        to={`/customers/${item.customerId}`}
+                        className="text-emerald-400 hover:text-emerald-500"
+                      >
+                        {item.customerName}
+                      </Link>
                     </td>
 
                     {/* KOLOM 2: CUSTOMER DETAILS - Warna Hijau & Shadow dari Orders */}
@@ -64,12 +68,20 @@ export default function Customers() {
 
                     {/* KOLOM 3: LOYALTY - Badge Status */}
                     <td className="p-6 text-center">
-                      <span className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-xl text-[10px] font-black uppercase tracking-wider shadow-sm
-                        ${item.loyalty === 'Bronze' ? 'bg-orange-50 text-orange-500 border border-orange-100' : 
-                          item.loyalty === 'Silver' ? 'bg-slate-50 text-slate-500 border border-slate-100' : 
-                          item.loyalty === 'Gold' ? 'bg-yellow-50 text-yellow-500 border border-yellow-100' : 
-                          item.loyalty === 'Platinum' ? 'bg-purple-50 text-purple-500 border border-purple-100' : 
-                          'bg-gray-50 text-gray-400 border border-gray-100'}`}>
+                      <span
+                        className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-xl text-[10px] font-black uppercase tracking-wider shadow-sm
+                        ${
+                          item.loyalty === "Bronze"
+                            ? "bg-orange-50 text-orange-500 border border-orange-100"
+                            : item.loyalty === "Silver"
+                              ? "bg-slate-50 text-slate-500 border border-slate-100"
+                              : item.loyalty === "Gold"
+                                ? "bg-yellow-50 text-yellow-500 border border-yellow-100"
+                                : item.loyalty === "Platinum"
+                                  ? "bg-purple-50 text-purple-500 border border-purple-100"
+                                  : "bg-gray-50 text-gray-400 border border-gray-100"
+                        }`}
+                      >
                         <FaCrown size={8} />
                         {item.loyalty}
                       </span>
@@ -98,7 +110,6 @@ export default function Customers() {
                         </button>
                       </div>
                     </td>
-
                   </tr>
                 ))}
               </tbody>
