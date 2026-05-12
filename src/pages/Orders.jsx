@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import orders from "../data/orders.json";
+import orders from "../data/Orders.json";
 import PageHeader from "../components/PageHeader";
 import { FaEdit, FaTrash, FaPlus, FaCircle } from "react-icons/fa";
 
