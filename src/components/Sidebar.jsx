@@ -1,5 +1,5 @@
 import { MdDashboard } from "react-icons/md";
-import { FaList, FaHeadphones, FaPlus, FaBan, FaLock, FaTimesCircle } from "react-icons/fa";
+import { FaList, FaHeadphones, FaPlus, FaBan, FaLock, FaTimesCircle, FaCube, FaShoppingCart, FaUsers} from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 
 export default function Sidebar() {
@@ -37,20 +37,27 @@ export default function Sidebar() {
           </li>
           <li>
             <NavLink to="/orders" className={menuClass}>
-              <FaList className="mr-4 text-xl" />
+              <FaShoppingCart className="mr-4 text-xl" />
               <span>Orders</span>
             </NavLink>
           </li>
           <li>
             <NavLink to="/customers" className={menuClass}>
-              <FaHeadphones className="mr-4 text-xl" />
+              <FaUsers className="mr-4 text-xl" />
               <span>Customers</span>
             </NavLink>
           </li>
           <li>
           <NavLink to="/products" className={menuClass}>
-              <FaHeadphones className="mr-4 text-xl" />
+              <FaCube className="mr-4 text-xl" />
               <span>Products</span>
+            </NavLink>
+          </li>
+
+          <li>
+            <NavLink to="/components" className={menuClass}>
+              <FaCube className="mr-4 text-xl" />
+              <span>Components</span>
             </NavLink>
           </li>
 

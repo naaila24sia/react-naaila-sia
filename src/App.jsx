@@ -22,6 +22,7 @@ function App() {
   const Products = React.lazy(() => import("./pages/Products"));
   const ProductDetail = React.lazy(() => import("./pages/ProductDetail"));
   const CustomerDetail = React.lazy(() => import("./pages/CustomerDetail"));
+  const Components = React.lazy(() => import("./pages/Components"));
 
   return (
     <Suspense fallback={<Loading />}>
@@ -30,6 +31,7 @@ function App() {
           <Route path="/" element={<Dashboard />} />
           <Route path="/orders" element={<Orders />} />
           <Route path="/customers" element={<Customers />} />
+          <Route path="/components" element={<Components />} />
           <Route path="/products" element={<Products />} />
           <Route path="/400" element={<Error400 />} />
           <Route path="/401" element={<Error401 />} />
