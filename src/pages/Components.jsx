@@ -134,9 +134,9 @@ export default function Components() {
 
         <Loading />
 
-        <Modal title="Konfirmasi">
+        {/* <Modal title="Konfirmasi">
           <p>Apakah kamu yakin?</p>
-        </Modal>
+        </Modal> */}
       </div>
 
       <HeroSection />
