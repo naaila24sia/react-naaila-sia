@@ -3,6 +3,7 @@ import "./assets/tailwind.css";
 import { Routes } from "react-router-dom";
 import { Route } from "react-router-dom";
 import Loading from "./components/Loading";
+import Note from "./pages/Note";
 
 function App() {
   const Dashboard = React.lazy(() => import("./pages/Dashboard"));
@@ -35,6 +36,7 @@ function App() {
           <Route path="/components" element={<Components />} />
           <Route path="/products" element={<Products />} />
           <Route path="/fitur-xyz" element={<FiturXyz />} />
+          <Route path="/note" element={<Note />} />
           <Route path="/400" element={<Error400 />} />
           <Route path="/401" element={<Error401 />} />
           <Route path="/403" element={<Error403 />} />

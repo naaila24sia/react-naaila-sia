@@ -68,6 +68,13 @@ export default function Sidebar() {
             </NavLink>
           </li>
 
+           <li>
+            <NavLink to="/note" className={menuClass}>
+              <FaCube className="mr-4 text-xl" />
+              <span>Notes</span>
+            </NavLink>
+          </li>
+
           {/* LABEL ERROR PAGE */}
           <li className="pt-4 pb-2 px-4">
             <p className="text-[12px] font-bold uppercase tracking-[2px] text-gray-400">
